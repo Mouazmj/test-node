@@ -5,9 +5,11 @@ const server = http.createServer((req, res) => {
 if (req.url === '/tasks' && req.method === 'Get') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write('Hello there!')
-    res.end()
+    res.end(JSON.stringify(tasks))
 } else {
-
+    res.writeHead(404, { 'Content-Type': 'application/json' })
+    res.write('Something went wrong!')
+    res.end(JSON.stringify({ message: 'Not Found' }))
 }
 })
 
