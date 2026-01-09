@@ -3,9 +3,11 @@ const tasks = require('./tasks')
 
 const server = http.createServer((req, res) => {
 if (req.url === '/tasks' && req.method === 'Get') {
-    res.setHeader('Content-Type', 'application/json');
+    res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write('Hello there!')
     res.end()
+} else {
+
 }
 })
 
