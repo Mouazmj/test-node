@@ -8,3 +8,7 @@ if (req.url === '/tasks' && req.method === 'Get') {
     res.end()
 }
 })
+
+server.listen(3000, 'localhost', () => {
+    console.log('Server running on port 3000!')
+})
