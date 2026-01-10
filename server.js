@@ -3,11 +3,11 @@ const tasks = require('./tasks')
 
 const server = http.createServer((req, res) => {
 if (req.url === '/tasks' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(tasks))
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hej det är Mouaz')
 } else {
-    res.writeHead(404, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ message: 'Not Found' }))
+    res.writeHead(404, { 'Content-Type': 'text/plain' })
+    res.end()
 }
 })
 
