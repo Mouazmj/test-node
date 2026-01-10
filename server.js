@@ -3,13 +3,13 @@ const tasks = require('./tasks')
 
 const server = http.createServer((req, res) => {
 if (req.url === '/tasks' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.writeHead(200, { 'Content-Type': 'text/html', 'Content-Type': 'application/json' });
     res.write('<h1>Hej det är Mouaz</h1>')
-    res.end()
+    res.end(JSON.stringify(tasks))
 } else {
-    res.writeHead(404, { 'Content-Type': 'text/html' })
+    res.writeHead(404, { 'Content-Type': 'text/html', 'Content-Type': 'application/json' })
     res.write('<h1>Något gick fel!</h1>')
-    res.end()
+    res.end(JSON.stringify({ message: 'Not found' }))
 }
 })
 
