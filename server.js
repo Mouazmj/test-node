@@ -1,8 +1,11 @@
 const http = require('http')
 const tasks = require('./tasks')
 const fs = require('fs')
+const _ = require('lodash')
 
 const server = http.createServer((req, res) => {
+    const num = _.random(0, 100)
+    console.log(num)
 let path = './views/'
 switch(req.url) {
     case '/':
