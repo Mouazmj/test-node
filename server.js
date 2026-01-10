@@ -14,8 +14,8 @@ switch(req.url) {
     res.statusCode = 200;
     break;
     case '/about-me':
-        res.setHeader('Location', '/about')
         res.statusCode = 301;
+        res.setHeader('Location', '/about')
         res.end()
         break;
     default:
