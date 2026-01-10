@@ -4,7 +4,8 @@ const tasks = require('./tasks')
 const server = http.createServer((req, res) => {
 if (req.url === '/tasks' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hej det är Mouaz')
+    res.write('<h1>Hej det är Mouaz</h1>')
+    res.end()
 } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' })
     res.end()
